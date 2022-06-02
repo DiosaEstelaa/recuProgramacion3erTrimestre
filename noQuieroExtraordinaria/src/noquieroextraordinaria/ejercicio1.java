@@ -25,20 +25,17 @@ public class ejercicio1 {
     // HOLA CRIS QUE TAL YO MAL. PUES MIRA, NO SE SI ME ESTOY ENTERANDO BIEN, SE QUE NO TE MOLA QUE REPITAMOS CODIGO
     // Y BASICAMENTE ESTOY HACIENDO LA MISMA FUNCION VARIAS VECES CON LAS DIFERENTES COLUMNAS DE COSAS QUE HACEN LOS
     // BOMBEROS. ESTOY NERVIOSA A MANTA, NO ME DA EL BODY PA MAS, SORRY TT_______TT
-    
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////// FUNCION FUEGOS /////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_fuegos(ArrayList<String[]> listaSalidas) {
-        double salidasFuegos[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
-
+        double salidasFuegos[] = {0, 0, 0};
+        listaSalidas.get(3);
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[3]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > salidasFuegos[0]) {
@@ -50,12 +47,11 @@ public class ejercicio1 {
                 salidasFuegos[1] = leido;
             }
 
-            salidasFuegos[3] += leido;
+            salidasFuegos[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        salidasFuegos[3] = salidasFuegos[3] / contador;
-
+        salidasFuegos[2] = salidasFuegos[2] / contador;
         return salidasFuegos;
     }
 
@@ -63,16 +59,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION DANIOS EN CONSTRUCCION /////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_daniosEnConstruccion(ArrayList<String[]> listaSalidas) {
-        double daniosEnConstruccion[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double daniosEnConstruccion[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[4]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > daniosEnConstruccion[0]) {
@@ -84,11 +78,11 @@ public class ejercicio1 {
                 daniosEnConstruccion[1] = leido;
             }
 
-            daniosEnConstruccion[4] += leido;
+            daniosEnConstruccion[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        daniosEnConstruccion[4] = daniosEnConstruccion[4] / contador;
+        daniosEnConstruccion[2] = daniosEnConstruccion[2] / contador;
 
         return daniosEnConstruccion;
     }
@@ -97,16 +91,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION SALVEMOS Y RESCATES /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_salvemosYrescates(ArrayList<String[]> listaSalidas) {
-        double salvemosYrescates[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double salvemosYrescates[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[5]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > salvemosYrescates[0]) {
@@ -118,11 +110,11 @@ public class ejercicio1 {
                 salvemosYrescates[1] = leido;
             }
 
-            salvemosYrescates[5] += leido;
+            salvemosYrescates[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        salvemosYrescates[5] = salvemosYrescates[5] / contador;
+        salvemosYrescates[2] = salvemosYrescates[2] / contador;
 
         return salvemosYrescates;
     }
@@ -131,16 +123,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION DANIOS POR AGUA /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_daniosPorAgua(ArrayList<String[]> listaSalidas) {
-        double daniosPorAgua[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double daniosPorAgua[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[6]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > daniosPorAgua[0]) {
@@ -152,11 +142,11 @@ public class ejercicio1 {
                 daniosPorAgua[1] = leido;
             }
 
-            daniosPorAgua[6] += leido;
+            daniosPorAgua[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        daniosPorAgua[6] = daniosPorAgua[6] / contador;
+        daniosPorAgua[2] = daniosPorAgua[2] / contador;
 
         return daniosPorAgua;
     }
@@ -165,16 +155,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION INCIDENTES DIVERSOS /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_incidentesDiversos(ArrayList<String[]> listaSalidas) {
-        double incidentesDiversos[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double incidentesDiversos[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[7]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > incidentesDiversos[0]) {
@@ -186,11 +174,11 @@ public class ejercicio1 {
                 incidentesDiversos[1] = leido;
             }
 
-            incidentesDiversos[7] += leido;
+            incidentesDiversos[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        incidentesDiversos[7] = incidentesDiversos[7] / contador;
+        incidentesDiversos[2] = incidentesDiversos[2] / contador;
 
         return incidentesDiversos;
     }
@@ -199,16 +187,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION SALIDAS SIN INTERVENCION /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_salidasSinIntervencion(ArrayList<String[]> listaSalidas) {
-        double salidasSinIntervencion[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double salidasSinIntervencion[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[8]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > salidasSinIntervencion[0]) {
@@ -220,11 +206,11 @@ public class ejercicio1 {
                 salidasSinIntervencion[1] = leido;
             }
 
-            salidasSinIntervencion[8] += leido;
+            salidasSinIntervencion[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        salidasSinIntervencion[8] = salidasSinIntervencion[8] / contador;
+        salidasSinIntervencion[2] = salidasSinIntervencion[2] / contador;
 
         return salidasSinIntervencion;
     }
@@ -233,16 +219,14 @@ public class ejercicio1 {
     ///////////////////////////////////////////////// FUNCION SERVICIOS VARIOS /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] masSalidas_y_numSalidas_serviciosVarios(ArrayList<String[]> listaSalidas) {
-        double salidasSinIntervencion[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double salidasSinIntervencion[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[9]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > salidasSinIntervencion[0]) {
@@ -254,29 +238,27 @@ public class ejercicio1 {
                 salidasSinIntervencion[1] = leido;
             }
 
-            salidasSinIntervencion[9] += leido;
+            salidasSinIntervencion[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        salidasSinIntervencion[9] = salidasSinIntervencion[9] / contador;
+        salidasSinIntervencion[2] = salidasSinIntervencion[2] / contador;
 
         return salidasSinIntervencion;
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////// FUNCION SERVICIOS VARIOS /////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static double[] menosSalidas_y_numSalidas_serviciosVarios(ArrayList<String[]> listaSalidas) {
-        double salidasSinIntervencion[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        //Posiciones:  [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-        // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+        double salidasSinIntervencion[] = {0, 0, 0};
 
         //Guardo los valores en un array para tener que recorrer la lista 1 vez
         int contador = 0;
 
         for (String[] entrada : listaSalidas) {
             //Paso la posición del total de salidas a double para poder compararla
-            double leido = Double.parseDouble(entrada[9]);
+            double leido = Double.parseDouble(entrada[2]);
 
             //  si es mayor que la que tengo guardada sobreescribo
             if (leido > salidasSinIntervencion[0]) {
@@ -288,11 +270,11 @@ public class ejercicio1 {
                 salidasSinIntervencion[1] = leido;
             }
 
-            salidasSinIntervencion[9] += leido;
+            salidasSinIntervencion[2] += leido;
             contador++;
         }
         //Una vez acabado el bucle hago la media
-        salidasSinIntervencion[9] = salidasSinIntervencion[9] / contador;
+        salidasSinIntervencion[2] = salidasSinIntervencion[2] / contador;
 
         return salidasSinIntervencion;
     }
@@ -304,17 +286,29 @@ public class ejercicio1 {
 
         // documento File con el que voy a trabajar en este ejercicio.
         File carpetaBomberos = new File("C:\\Users\\DAW\\Desktop\\recuProgramacion3erTrimestre\\noQuieroExtraordinaria\\src\\noquieroextraordinaria\\Bomberos");
-        
+
+        File prueba = new File("C:\\Users\\DAW\\Desktop\\recuProgramacion3erTrimestre\\noQuieroExtraordinaria\\src\\noquieroextraordinaria\\Bomberos\\2017.csv");
         try {
 
             // hago array de tipo file para que me liste los documentos de la carpeta bomberos
             File[] nuevo = carpetaBomberos.listFiles();
+            Scanner leer = new Scanner(prueba);
+            leer.useDelimiter(";");
 
+            ArrayList<String[]> listaDatos2 = new ArrayList<>();
+
+            while (leer.hasNext()) {
+                String[] entrada2 = leer.nextLine().split(";");
+                // [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
+                // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+
+                listaDatos2.add(entrada2);
+            }
             //for (int i = 0; i < nuevo.length; i++) { // inicio for 1
             for (File fichero : nuevo) { // inicio for 1
 
                 Scanner lectorArchivo = new Scanner(fichero);
-
+                lectorArchivo.useDelimiter(";");
                 ArrayList<String[]> listaDatos = new ArrayList<>();
 
                 while (lectorArchivo.hasNext()) {
@@ -329,16 +323,35 @@ public class ejercicio1 {
 
                 double[] maximaFuegos, maximaDaniosEnConstruccion, maximaSalvemos_y_Rescates, maximaDaniosPorAgua, maximaIncidentesDiversos, maximaSalidasSinIntervencion, maximaServiciosVarios;
 
-                maximaFuegos = masSalidas_y_numSalidas_daniosEnConstruccion(listaDatos);
+                // los fuegos están en la posicion 3 del array:
+                listaDatos.get(3);
+
+                maximaFuegos = masSalidas_y_numSalidas_fuegos(listaDatos);
+
+                // los danios en construccion están en la posicion 4 del array:
+                listaDatos.get(4);
                 maximaDaniosEnConstruccion = masSalidas_y_numSalidas_daniosEnConstruccion(listaDatos);
+
+                // salvemos y rescates están en la posicion 5 del array:
                 maximaSalvemos_y_Rescates = masSalidas_y_numSalidas_salvemosYrescates(listaDatos);
+                listaDatos.get(5);
+
+                // los danios por agua están en la posicion 6 del array:
                 maximaDaniosPorAgua = masSalidas_y_numSalidas_daniosPorAgua(listaDatos);
+                listaDatos.get(6);
+
                 maximaIncidentesDiversos = masSalidas_y_numSalidas_incidentesDiversos(listaDatos);
                 maximaSalidasSinIntervencion = masSalidas_y_numSalidas_salidasSinIntervencion(listaDatos);
                 maximaServiciosVarios = masSalidas_y_numSalidas_serviciosVarios(listaDatos);
 
+                // cuando runeo el programa me muestra 3 veces lo mismo, porque tengo puesto 3 sout y en realiadad en las funciones no determino la posición
+                // pero es que llevo un buen rato y nada 
                 //Muestro todos los datos con formato de dos decimales
-                System.out.println("mas salidas y numero de salidas:    " + ( maximaFuegos[0]) + "     " + (maximaFuegos[1]));
+                System.out.println("mas salidas y numero de salidas de fuegos:    " + (maximaFuegos[0]) + "     " + (maximaFuegos[1]));
+                System.out.println("mas salidas y numero de danios en construccion:    " + (maximaDaniosEnConstruccion[0]) + "     " + (maximaDaniosEnConstruccion[1]));
+                System.out.println("mas salidas y numero de salvemos y rescates:    " + (maximaSalvemos_y_Rescates[0]) + "     " + (maximaSalvemos_y_Rescates[1]));
+
+                HashMap<String, Integer> hashMapDistrito_Intervenciones = new HashMap<String, Integer>();
 
             } // fin for 1
 
