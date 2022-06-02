@@ -10,7 +10,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,8 +25,6 @@ public class ejercicio1 {
     /**
      * @param args the command line arguments
      */
-    
-    
     // POS SI QUE VOY A LA EXTRAORDINARIA ACHO
     /*
     
@@ -43,7 +44,7 @@ public class ejercicio1 {
               '8:::::::::::8'
                  '8:::::8'
                     '8'
-*/
+     */
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////// FUNCION FUEGOS /////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -306,23 +307,36 @@ public class ejercicio1 {
         // documento File con el que voy a trabajar en este ejercicio.
         File carpetaBomberos = new File("C:\\Users\\DAW\\Desktop\\recuProgramacion3erTrimestre\\noQuieroExtraordinaria\\src\\noquieroextraordinaria\\Bomberos");
 
-        File prueba = new File("C:\\Users\\DAW\\Desktop\\recuProgramacion3erTrimestre\\noQuieroExtraordinaria\\src\\noquieroextraordinaria\\Bomberos\\2017.csv");
+        File prueba = new File("C:\\Users\\DAW\\Desktop\\recuProgramacion3erTrimestre\\noQuieroExtraordinaria\\src\\noquieroextraordinaria\\Bomberos\\2021.csv");
         try {
 
             // hago array de tipo file para que me liste los documentos de la carpeta bomberos
             File[] nuevo = carpetaBomberos.listFiles();
-            Scanner leer = new Scanner(prueba);
-            leer.useDelimiter(";");
-
+//            Scanner leer = new Scanner(prueba);
+//            leer.useDelimiter(";");
+//
             ArrayList<String[]> listaDatos2 = new ArrayList<>();
-
-            while (leer.hasNext()) {
-                String[] entrada2 = leer.nextLine().split(";");
-                // [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
-                // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
-
-                listaDatos2.add(entrada2);
+//
+//            while (leer.hasNext()) {
+//                String[] entrada2 = leer.nextLine().split(";");
+//                // [0] = año, [1] = mes, [2] = distrito, [3] = fuegos, [4] = daños en construccion, [5] = salvemos y rescates
+//                // [6] = daños por agua, [7] = incidentes diversos, [8] = salidas sin intervencion, [9] = servicios varios, [10] = total
+//
+//                listaDatos2.add(entrada2);
+//            }
+            try ( BufferedReader br = new BufferedReader(new FileReader(prueba.getAbsolutePath()))) {
+                String line;
+                List<String> list = new LinkedList<>();
+                while ((line = br.readLine()) != null) {
+                    listaDatos2.add(line.split(";"));
+                }
+                for (int i = 0; i < list.size(); i++) {
+                    System.out.println(list.get(i));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
             //for (int i = 0; i < nuevo.length; i++) { // inicio for 1
             for (File fichero : nuevo) { // inicio for 1
 
